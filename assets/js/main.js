@@ -34,7 +34,7 @@ Template: QueueEasy - Smart Queue Management System
       if (wordmark)
         wordmark.src = "assets/images/logo/queueeasy-wordmark-dark.svg";
       var icon = document.querySelector(".navbar-brand .qe-icon");
-      if (icon) icon.src = "assets/images/logo/qzy-logo-pink.png";
+      if (icon) icon.src = "assets/images/logo/qzy-logo-green.png";
     } else {
       header_navbar.classList.remove("sticky");
       // Restore white wordmark and icon for pink hero background
