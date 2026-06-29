@@ -2754,7 +2754,7 @@ ol {
 
 .solutions-stats {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 0;
   margin-top: 34px;
   padding: 26px 30px;
@@ -2772,6 +2772,7 @@ ol {
 .solution-stat {
   display: flex;
   align-items: flex-start;
+  justify-content: center;
   gap: 20px;
   padding: 0 28px;
   border-right: 1px solid rgba(8, 24, 40, 0.14);
@@ -2828,12 +2829,12 @@ ol {
   }
 
   .solutions-stats {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px 0;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
   }
 
   .solution-stat:nth-child(2) {
-    border-right: 0;
+    border-right: 1px solid rgba(8, 24, 40, 0.14);
   }
 }
 
@@ -2894,6 +2895,7 @@ ol {
   }
 
   .solution-stat {
+    justify-content: flex-start;
     padding: 0 0 18px;
     border-right: 0;
     border-bottom: 1px solid rgba(8, 24, 40, 0.12);
@@ -3249,38 +3251,6 @@ ol {
   box-shadow: 0px 18px 40px #00000017;
 }
 
-.about-image-badge {
-  position: absolute;
-  z-index: 2;
-  left: 0;
-  top: 38%;
-  width: 160px;
-  padding: 28px 22px;
-  background: linear-gradient(135deg, var(--color-brand-dark) 0%, var(--color-brand-panel) 100%);
-  color: #fff;
-  border-radius: 18px;
-  -webkit-box-shadow: 0px 18px 35px rgba(var(--color-brand-deep-rgb), 0.32);
-  box-shadow: 0px 18px 35px rgba(var(--color-brand-deep-rgb), 0.32);
-}
-
-.about-image-badge i {
-  color: var(--color-brand-primary);
-  font-size: 34px;
-  margin-bottom: 18px;
-}
-
-.about-image-badge span {
-  color: #fff;
-  display: block;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 24px;
-}
-
-.about-image-badge strong {
-  color: var(--color-brand-primary);
-}
-
 .about-values-row {
   margin-top: 55px;
 }
@@ -3453,11 +3423,6 @@ ol {
     height: 390px;
   }
 
-  .about-image-badge {
-    width: 145px;
-    padding: 24px 18px;
-  }
-
   .about-quote-banner {
     gap: 28px;
     padding: 32px 28px;
@@ -3557,15 +3522,6 @@ ol {
     height: auto;
     min-height: 280px;
     border-radius: 22px;
-  }
-
-  .about-image-badge {
-    position: relative;
-    top: auto;
-    left: auto;
-    width: 100%;
-    margin-top: 18px;
-    padding: 22px;
   }
 
   .about-values-row {
@@ -4379,6 +4335,20 @@ ol {
 
 .footer .footer-top {
   padding: 80px 0 60px;
+}
+
+.footer-partner {
+  margin-top: 24px;
+}
+
+.footer-partner img {
+  max-width: 150px;
+  width: 100%;
+  height: auto;
+}
+
+.footer-partner img:hover {
+  opacity: 1;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
