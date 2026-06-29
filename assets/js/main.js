@@ -57,9 +57,25 @@ Template: QueueEasy - Smart Queue Management System
     }
   };
 
+  function getScrollOffset() {
+    var header = document.querySelector(".navbar-area");
+    var headerHeight = header ? header.getBoundingClientRect().height : 0;
+    return headerHeight + 25;
+  }
+
+  function getSectionHeading(target) {
+    if (target.id === "home") return target;
+    return (
+      target.querySelector(".section-title") ||
+      target.querySelector(".about-label") ||
+      target.querySelector(".contact-label") ||
+      target
+    );
+  }
+
   // section menu active
   function onScroll(event) {
-    var sections = document.querySelectorAll(".page-scroll");
+    var sections = document.querySelectorAll("#nav .page-scroll");
     var scrollPos =
       window.scrollY ||
       document.documentElement.scrollTop ||
@@ -69,12 +85,13 @@ Template: QueueEasy - Smart Queue Management System
       var currLink = sections[i];
       var val = currLink.getAttribute("href");
       var refElement = document.querySelector(val);
-      var scrollTopMinus = scrollPos + 73;
+      var scrollTopMinus = scrollPos + getScrollOffset();
       if (
         refElement.offsetTop <= scrollTopMinus &&
         refElement.offsetTop + refElement.offsetHeight > scrollTopMinus
       ) {
-        document.querySelector(".page-scroll").classList.remove("active");
+        var activeLink = document.querySelector("#nav .page-scroll.active");
+        if (activeLink) activeLink.classList.remove("active");
         currLink.classList.add("active");
       } else {
         currLink.classList.remove("active");
@@ -84,27 +101,26 @@ Template: QueueEasy - Smart Queue Management System
 
   window.document.addEventListener("scroll", onScroll);
 
-  var pageLink = document.querySelectorAll(".page-scroll");
+  var pageLink = document.querySelectorAll(
+    '.page-scroll, .footer .f-link a[href^="#"]'
+  );
 
   pageLink.forEach(function (link) {
     link.addEventListener("click", function (e) {
-      e.preventDefault();
-      var target = document.querySelector(this.getAttribute("href"));
+      var href = this.getAttribute("href");
+      if (!href || href === "#") return;
+
+      var target = document.querySelector(href);
       if (!target) return;
 
-      var offset;
-      if (window.innerWidth >= 1200) {
-        offset = 20;
-      } else if (window.innerWidth >= 992) {
-        offset = 30;
-      } else if (window.innerWidth >= 768) {
-        offset = 45;
-      } else {
-        offset = 60;
-      }
+      e.preventDefault();
+      var scrollTarget = getSectionHeading(target);
 
       window.scrollTo({
-        top: target.offsetTop - offset,
+        top:
+          scrollTarget.getBoundingClientRect().top +
+          window.pageYOffset -
+          getScrollOffset(),
         behavior: "smooth",
       });
     });
