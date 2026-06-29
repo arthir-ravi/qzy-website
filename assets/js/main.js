@@ -145,15 +145,22 @@ Template: QueueEasy - Smart Queue Management System
       var emailAddress = document.getElementById("contactEmail").value.trim();
       var message = document.getElementById("contactMessage").value.trim();
       var whatsappNumber = "919443356858";
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
       if (
         !fullName ||
-        !businessName ||
-        !phoneNumber ||
         !emailAddress ||
         !message
       ) {
         alert("Please fill in all required fields.");
+        return;
+      }
+      else if (!emailRegex.test(emailAddress)) {
+        alert("Please enter a valid email address.");
+        return;
+      }
+      else if (phoneNumber && !/^\d{10}$/.test(phoneNumber)) {
+        alert("Please enter a valid 10-digit phone number.");
         return;
       }
 
@@ -174,11 +181,13 @@ Template: QueueEasy - Smart Queue Management System
         "Message:\n" +
         message;
 
-      window.location.href =
+      var whatsappUrl =
         "https://wa.me/" +
         whatsappNumber +
         "?text=" +
         encodeURIComponent(whatsappMessage);
+      
+      window.open(whatsappUrl, "_blank");
     });
   }
 
