@@ -2913,19 +2913,19 @@ ol {
 }
 
 /*=============================
-	Pricing Table CSS
+	Plans Table CSS
 ===============================*/
-.pricing-table {
+.plans-table {
   position: relative;
   overflow: hidden;
   background: linear-gradient(180deg, #fff 0%, var(--color-brand-surface-soft) 100%);
 }
 
-.pricing-table .section-title {
+.plans-table .section-title {
   margin-bottom: 50px;
 }
 
-.pricing-table .section-title h3 {
+.plans-table .section-title h3 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -2941,36 +2941,36 @@ ol {
   text-transform: uppercase;
 }
 
-.pricing-table .section-title h3 i {
+.plans-table .section-title h3 i {
   color: var(--color-brand-panel);
 }
 
-.pricing-table .section-title h2 {
+.plans-table .section-title h2 {
   color: var(--color-brand-panel);
 }
 
-.pricing-table .section-title h2 span {
+.plans-table .section-title h2 span {
   color: var(--color-brand-medium);
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px),
   (max-width: 767px) {
-  .pricing-table .section-title {
+  .plans-table .section-title {
     margin-bottom: 30px;
   }
 }
 
-.pricing-table .row.justify-content-center > [class*="col-"] {
+.plans-table .row.justify-content-center > [class*="col-"] {
   display: flex;
 }
 
 @media (min-width: 768px) {
-  .pricing-table .row.justify-content-center > [class*="col-"] {
+  .plans-table .row.justify-content-center > [class*="col-"] {
     max-width: 360px;
   }
 }
 
-.pricing-table .single-table {
+.plans-table .single-table {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -2983,41 +2983,41 @@ ol {
   transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s;
 }
 
-.pricing-table .single-table:hover:hover {
+.plans-table .single-table:hover:hover {
   -webkit-box-shadow: 0px 3px 5px #00000017;
   box-shadow: 0px 3px 5px #00000017;
   -webkit-transform: translateY(-5px);
   transform: translateY(-5px);
 }
 
-.pricing-table .single-table .table-head {
+.plans-table .single-table .table-head {
   padding: 24px 25px;
   border-bottom: 1px solid #eee;
 }
 
-.pricing-table .single-table .table-head .title {
+.plans-table .single-table .table-head .title {
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 12px;
 }
 
-.pricing-table .single-table .table-head p {
+.plans-table .single-table .table-head p {
   font-weight: 400;
   font-size: 14px;
   line-height: 21px;
 }
 
-.pricing-table .single-table .table-head .price {
+.plans-table .single-table .table-head .price {
   padding: 15px 0 20px;
 }
 
-.pricing-table .single-table .table-head .price .amount {
+.plans-table .single-table .table-head .price .amount {
   font-size: 30px;
   font-weight: 700;
   display: inline-block;
 }
 
-.pricing-table .single-table .table-head .price .amount .duration {
+.plans-table .single-table .table-head .price .amount .duration {
   display: inline-block;
   font-size: 14px;
   color: #888;
@@ -3025,31 +3025,31 @@ ol {
   margin-left: 3px;
 }
 
-.pricing-table .single-table .table-head .button .btn {
+.plans-table .single-table .table-head .button .btn {
   width: 100%;
   padding: 12px 30px;
   font-size: 13px;
   background-color: var(--color-brand-panel);
 }
 
-.pricing-table .single-table .table-head .button .btn:hover {
+.plans-table .single-table .table-head .button .btn:hover {
   background-color: var(--color-brand-medium);
   color: #fff;
 }
 
-.pricing-table .single-table .table-content {
+.plans-table .single-table .table-content {
   flex: 1;
   padding: 24px 25px;
 }
 
-.pricing-table .single-table .table-content .middle-title {
+.plans-table .single-table .table-content .middle-title {
   font-size: 13px;
   font-weight: 500;
   text-transform: uppercase;
   margin-bottom: 18px;
 }
 
-.pricing-table .single-table .table-content .table-list li {
+.plans-table .single-table .table-content .table-list li {
   position: relative;
   padding-left: 24px;
   font-size: 14px;
@@ -3057,11 +3057,11 @@ ol {
   line-height: 22px;
 }
 
-.pricing-table .single-table .table-content .table-list li:last-child {
+.plans-table .single-table .table-content .table-list li:last-child {
   margin: 0;
 }
 
-.pricing-table .single-table .table-content .table-list li i {
+.plans-table .single-table .table-content .table-list li i {
   color: var(--color-brand-primary);
   font-size: 14px;
   position: absolute;
@@ -3070,19 +3070,19 @@ ol {
 }
 
 @media (max-width: 767px) {
-  .pricing-table .single-table .table-head {
+  .plans-table .single-table .table-head {
     padding: 22px 24px;
   }
 
-  .pricing-table .single-table .table-head .price {
+  .plans-table .single-table .table-head .price {
     padding: 18px 0;
   }
 
-  .pricing-table .single-table .table-content {
+  .plans-table .single-table .table-content {
     padding: 22px 24px;
   }
 
-  .pricing-table .single-table .table-content .middle-title {
+  .plans-table .single-table .table-content .middle-title {
     margin-bottom: 16px;
   }
 }
