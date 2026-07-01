@@ -156,7 +156,7 @@
                 <div class="mb-3 mx-auto d-flex align-items-center justify-content-center journey-icon-box">
                   <i class="fa-solid fa-store"></i>
                 </div>
-                <h6 class="mb-1 journey-title">1. Create Business</h6>
+                <h6 class="mb-1 journey-title">1. Create Account</h6>
                 <p class="mb-0 journey-desc">
                   Register your business and create services
                 </p>
@@ -514,30 +514,29 @@
 
         <div class="industry-block wow fadeInLeft" data-wow-delay=".4s">
           <div class="industry-image">
-            <img src="assets/images/industries/meat-shop.webp"
+            <img src="assets/images/industries/small-vendors.png"
               alt="Meat shop queue management" />
           </div>
           <div class="industry-content">
             <div class="industry-title">
-              <span><i class="fa-solid fa-drumstick-bite"></i></span>
+              <span><i class="fa-solid fa-store"></i></span>
               <h3>Small Vendors</h3>
             </div>
             <p>
-              Handle customer queues efficiently during peak hours, organize fresh meat orders,
-              and serve every customer quickly without long waiting times.
+              Help customers join the queue digitally, reduce crowding, and manage orders efficiently during busy hours.
             </p>
             <ul>
               <li>
                 <i class="fa-solid fa-circle-check"></i> QR Code Queue Joining
               </li>
               <li>
-                <i class="fa-solid fa-circle-check"></i> Live Token & Queue Display
+                <i class="fa-solid fa-circle-check"></i> Live Queue Tracking
               </li>
               <li>
-                <i class="fa-solid fa-circle-check"></i> Order Pickup Notifications
+                <i class="fa-solid fa-circle-check"></i> Customer Notifications
               </li>
               <li>
-                <i class="fa-solid fa-circle-check"></i> Multiple Counters & Services
+                <i class="fa-solid fa-circle-check"></i> Faster Order Pickup
               </li>
             </ul>
           </div>
@@ -613,13 +612,10 @@
                 <li><i class="fa-regular fa-circle-check"></i> 1 device</li>
                 <li><i class="fa-regular fa-circle-check"></i> 1 business</li>
                 <li>
-                  <i class="fa-regular fa-circle-check"></i> Up to 3 services
+                  <i class="fa-regular fa-circle-check"></i> 1 service
                 </li>
                 <li>
-                  <i class="fa-regular fa-circle-check"></i> 2 active queues
-                </li>
-                <li>
-                  <i class="fa-regular fa-circle-check"></i> 2 team members
+                  <i class="fa-regular fa-circle-check"></i> 1 active queue
                 </li>
               </ul>
               <!-- End Table List -->
@@ -846,7 +842,8 @@
               <div class="row">
                 <div class="col-md-6 col-12">
                   <div class="form-group">
-                    <input type="text" id="contactName" name="fullName" placeholder="Full Name *" required />
+                    <input type="text" id="contactName" name="fullName" placeholder="Full Name *" />
+                    <small class="error-message" id="nameError"></small>
                   </div>
                 </div>
                 <div class="col-md-6 col-12">
@@ -857,16 +854,19 @@
                 <div class="col-md-6 col-12">
                   <div class="form-group">
                     <input type="tel" id="contactPhone" name="phoneNumber" placeholder="Phone Number" />
+                    <small class="error-message" id="phoneError"></small>
                   </div>
                 </div>
                 <div class="col-md-6 col-12">
                   <div class="form-group">
-                    <input type="email" id="contactEmail" name="emailAddress" placeholder="Email Address *" required />
+                    <input type="email" id="contactEmail" name="emailAddress" placeholder="Email Address *" />
+                    <small class="error-message" id="emailError"></small>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-group">
-                    <textarea id="contactMessage" name="message" rows="6" placeholder="Your Business Need *" required></textarea>
+                    <textarea id="contactMessage" name="message" rows="6" placeholder="Your Business Need *"></textarea>
+                    <small class="error-message" id="messageError"></small>
                   </div>
                 </div>
                 <div class="col-12">
@@ -1010,7 +1010,7 @@
     <div class="footer-bottom">
       <div class="container">
         <div class="footer-bottom-inner">
-          <p>&copy; 2026 Qzy. All rights reserved</p>
+          <p>&copy; 2026 <span class="brand-name">Qzy</span>. All rights reserved</p>
           <span class="p-2">|</span>
           <p>Made by <a href="https://techmanisoft.com" target="_blank">Manisoft</a></p>
         </div>

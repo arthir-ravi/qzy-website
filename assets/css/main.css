@@ -61,7 +61,7 @@ p {
 }
 
 .brand-name {
-  color: var(--color-brand-panel);
+  color: var(--color-brand-medium);
   font-weight: 700;
 }
 
@@ -4000,6 +4000,19 @@ ol {
   line-height: 22px;
 }
 
+.error-message{
+  display:block;
+  color:#dc3545;
+  font-size:13px;
+  margin-top:6px;
+  min-height:18px;
+}
+
+.form-group input.error,
+.form-group textarea.error{
+  border:1px solid #dc3545 !important;
+}
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .contact-us {
     padding-top: 52px;
@@ -4475,6 +4488,10 @@ ol {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+}
+
+.footer .footer-bottom .footer-bottom-inner span {
+  color: var(--color-brand-primary);
 }
 
 @media (max-width: 767px) {

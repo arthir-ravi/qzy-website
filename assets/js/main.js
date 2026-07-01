@@ -128,14 +128,40 @@ Template: QueueEasy - Smart Queue Management System
 
   // Contact form WhatsApp redirect
   var contactForm = document.getElementById("contactForm");
+  function showError(inputId, errorId, message) {
+    document.getElementById(inputId).classList.add("error");
+    document.getElementById(errorId).textContent = message;
+  }
+
+  function clearErrors() {
+    document.querySelectorAll(".error-message").forEach(function (el) {
+      el.textContent = "";
+    });
+
+    document
+      .querySelectorAll("#contactForm input, #contactForm textarea")
+      .forEach(function (el) {
+        el.classList.remove("error");
+      });
+  }
+
   if (contactForm) {
+    document
+      .querySelectorAll("#contactForm input, #contactForm textarea")
+      .forEach(function (field) {
+        field.addEventListener("input", function () {
+          this.classList.remove("error");
+
+          const error = this.parentElement.querySelector(".error-message");
+          if (error) {
+            error.textContent = "";
+          }
+        });
+      });
+
     contactForm.addEventListener("submit", function (e) {
       e.preventDefault();
-
-      if (!contactForm.checkValidity()) {
-        contactForm.reportValidity();
-        return;
-      }
+      clearErrors();
 
       var fullName = document.getElementById("contactName").value.trim();
       var businessName = document
@@ -147,20 +173,48 @@ Template: QueueEasy - Smart Queue Management System
       var whatsappNumber = "919443356858";
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-      if (
-        !fullName ||
-        !emailAddress ||
-        !message
-      ) {
-        alert("Please fill in all required fields.");
-        return;
+      let isValid = true;
+      if (!fullName) {
+        showError("contactName", "nameError", "Please enter your full name.");
+        isValid = false;
       }
-      else if (!emailRegex.test(emailAddress)) {
-        alert("Please enter a valid email address.");
-        return;
+      if (!emailAddress) {
+        showError(
+          "contactEmail",
+          "emailError",
+          "Please enter your email address."
+        );
+        isValid = false;
+      } else if (!emailRegex.test(emailAddress)) {
+        showError(
+          "contactEmail",
+          "emailError",
+          "Please enter a valid email address."
+        );
+        isValid = false;
       }
-      else if (phoneNumber && !/^\d{10}$/.test(phoneNumber)) {
-        alert("Please enter a valid 10-digit phone number.");
+      if (phoneNumber && !/^[0-9]{10}$/.test(phoneNumber)) {
+        showError(
+          "contactPhone",
+          "phoneError",
+          "Please enter a valid phone number."
+        );
+        isValid = false;
+      }
+      if (!message) {
+        showError(
+          "contactMessage",
+          "messageError",
+          "Please describe your business requirement."
+        );
+        isValid = false;
+      }
+
+      if (!isValid) {
+        const firstError = document.querySelector(".error");
+        if (firstError) {
+          firstError.focus();
+        }
         return;
       }
 
