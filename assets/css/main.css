@@ -2750,11 +2750,17 @@ ol {
   color: #4c5563;
   font-size: 15px;
   font-weight: 500;
+  line-height: 1.5;
 }
 
 .industry-content li i {
   color: var(--color-brand-medium);
   font-size: 15px;
+  line-height: 1;
+  text-align: center;
+  flex: 0 0 16px;
+  width: 16px;
+  margin-top: 3px;
 }
 
 .industries-stats {
@@ -2819,18 +2825,54 @@ ol {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+  .industry-block {
+    grid-template-columns: 1fr;
+  }
+
+  .industry-reverse .industry-image,
+  .industry-reverse .industry-content {
+    order: initial;
+  }
+
+  .industry-image,
+  .industry-image img {
+    min-height: 340px;
+  }
+
   .industry-content {
-    padding: 42px 36px;
+    padding: 30px 36px 32px;
   }
 
   .industry-title {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 18px;
+    align-items: center;
+    flex-direction: row;
+    gap: 14px;
+    margin-bottom: 12px;
+  }
+
+  .industry-title span {
+    flex-basis: 58px;
+    width: 58px;
+    height: 58px;
+    line-height: 58px;
+    font-size: 26px;
   }
 
   .industry-title h3 {
+    min-width: 0;
     font-size: 23px;
+  }
+
+  .industry-content > p {
+    margin-bottom: 16px;
+  }
+
+  .industry-content ul {
+    margin-bottom: 0;
+  }
+
+  .industry-content li {
+    margin-bottom: 8px;
   }
 
   .industries-stats {
@@ -2872,6 +2914,8 @@ ol {
   }
 
   .industry-title {
+    align-items: center;
+    flex-direction: row;
     gap: 16px;
   }
 
@@ -2885,6 +2929,7 @@ ol {
   }
 
   .industry-title h3 {
+    min-width: 0;
     font-size: 22px;
   }
 
