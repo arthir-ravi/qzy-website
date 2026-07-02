@@ -3744,10 +3744,15 @@ ol {
 }
 
 .contact-help-item h4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
   color: #081828;
   font-size: 13px;
+  line-height: 16px;
   font-weight: 700;
-  margin-bottom: 7px;
+  margin-bottom: 10px;
 }
 
 .contact-help-item p {
